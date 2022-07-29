@@ -30,7 +30,6 @@ module.exports = configure(function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
-      
       'axios',
     ],
 
@@ -56,7 +55,13 @@ module.exports = configure(function (/* ctx */) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
     build: {
       target: {
-        browser: [ 'es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1' ],
+        browser: [
+          'es2019',
+          'edge88',
+          'firefox78',
+          'chrome87',
+          'safari13.1'
+        ],
         node: 'node16'
       },
 
@@ -79,7 +84,7 @@ module.exports = configure(function (/* ctx */) {
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
 
-      
+
       // vitePlugins: [
       //   [ 'package-name', { ..options.. } ]
       // ]
@@ -148,10 +153,10 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/developing-pwa/configuring-pwa
     pwa: {
-      workboxMode: 'generateSW', // or 'injectManifest'
-      injectPwaMetaTags: true,
-      swFilename: 'sw.js',
-      manifestFilename: 'manifest.json',
+      workboxMode:                  'generateSW', // or 'injectManifest'
+      injectPwaMetaTags:            true,
+      swFilename:                   'sw.js',
+      manifestFilename:             'manifest.json',
       useCredentialsForManifestTag: false,
       // extendGenerateSWOptions (cfg) {}
       // extendInjectManifestOptions (cfg) {},

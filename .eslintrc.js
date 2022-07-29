@@ -72,7 +72,6 @@ module.exports = {
     'one-var': 'off',
     'no-void': 'off',
     'multiline-ternary': 'off',
-    'semi': 0,
     'import/first': 'off',
     'import/namespace': 'error',
     'import/default': 'error',
@@ -102,6 +101,18 @@ module.exports = {
     'no-unused-vars': 'off',
 
     // allow debugger during development only
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
+    "semi": [2, "always"],
+    // TypeScript
+    '@typescript-eslint/no-unsafe-return'             : 'off',
+    '@typescript-eslint/no-unsafe-member-access'      : 'off',
+    '@typescript-eslint/no-unsafe-assignment'         : 'off',
+    '@typescript-eslint/no-empty-interface'           : 'off',
+    '@typescript-eslint/no-floating-promises'         : 'off',
+    '@typescript-eslint/no-explicit-any'              : 'off',
+    'key-spacing': "off",
+    'padded-blocks': "off",
+    'no-trailing-spaces': "off",
   }
 }

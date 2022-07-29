@@ -1,9 +1,9 @@
 <template>
   <q-item
     clickable
-    tag="a"
-    target="_blank"
-    :href="link"
+    tag    = "a"
+    target = "_blank"
+    :href  = "link"
   >
     <q-item-section
       v-if="icon"
@@ -26,22 +26,22 @@ export default defineComponent({
   name: 'EssentialLink',
   props: {
     title: {
-      type: String,
+      type:     String,
       required: true
     },
 
     caption: {
-      type: String,
+      type:    String,
       default: ''
     },
 
     link: {
-      type: String,
+      type:    String,
       default: '#'
     },
 
     icon: {
-      type: String,
+      type:    String,
       default: ''
     }
   }

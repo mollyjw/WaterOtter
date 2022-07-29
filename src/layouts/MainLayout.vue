@@ -6,8 +6,8 @@
           flat
           dense
           round
-          icon="menu"
-          aria-label="Menu"
+          icon       = "menu"
+          aria-label = "Menu"
           @click="toggleLeftDrawer"
         />
 
@@ -46,51 +46,55 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import {
+  defineComponent,
+  ref
+} from 'vue';
+
 import EssentialLink from 'components/EssentialLink.vue';
 
 const linksList = [
   {
-    title: 'Docs',
+    title:   'Docs',
     caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    icon:    'school',
+    link:    'https://quasar.dev'
   },
   {
-    title: 'Github',
+    title:   'Github',
     caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    icon:    'code',
+    link:    'https://github.com/quasarframework'
   },
   {
-    title: 'Discord Chat Channel',
+    title:   'Discord Chat Channel',
     caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    icon:    'chat',
+    link:    'https://chat.quasar.dev'
   },
   {
-    title: 'Forum',
+    title:   'Forum',
     caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    icon:    'record_voice_over',
+    link:    'https://forum.quasar.dev'
   },
   {
-    title: 'Twitter',
+    title:   'Twitter',
     caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
+    icon:    'rss_feed',
+    link:    'https://twitter.quasar.dev'
   },
   {
-    title: 'Facebook',
+    title:   'Facebook',
     caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
+    icon:    'public',
+    link:    'https://facebook.quasar.dev'
   },
   {
-    title: 'Quasar Awesome',
+    title:   'Quasar Awesome',
     caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    icon:    'favorite',
+    link:    'https://awesome.quasar.dev'
   }
 ];
 
