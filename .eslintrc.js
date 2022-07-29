@@ -114,5 +114,6 @@ module.exports = {
     'key-spacing': "off",
     'padded-blocks': "off",
     'no-trailing-spaces': "off",
+    'no-multi-spaces': "off"
   }
 }

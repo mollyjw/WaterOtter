@@ -106,15 +106,15 @@ export default defineComponent({
   },
 
   setup () {
-    const leftDrawerOpen = ref(false)
+    const leftDrawerOpen = ref(false);
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
+        leftDrawerOpen.value = !leftDrawerOpen.value;
       }
-    }
+    };
   }
 });
 </script>
