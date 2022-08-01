@@ -35,17 +35,14 @@ import {
   defineComponent,
   PropType,
   computed,
-  Ref,
 } from 'vue';
 
 import {
   Todo
 } from '../models';
 
-import { useTodoStore } from 'stores/example-store';
-
 function useDisplayTodo(todos: Todo[]) {
-  const todoCount = computed(() => todos.values.length);
+  const todoCount = computed(() => todos.length);
 
   return { todoCount };
 }

@@ -4,6 +4,9 @@
       title  = "Todo List:"
       :todos = "todos"
     ></example-component>
+
+    <q-btn @click="addTodos">Add Todos</q-btn>
+    <q-btn @click="clearTodos">Clear Todos</q-btn>
   </q-page>
 </template>
 
@@ -17,13 +20,21 @@ import {
 
 import { useTodoStore } from 'stores/example-store';
 
+const todoStore = useTodoStore();
+
 export default defineComponent({
   name: 'IndexPage',
   components: { ExampleComponent },
   setup () {
     return {
-      ...useTodoStore()
+      ...todoStore,
+      addTodos: () => {
+        todoStore.addTenTodos();
+      },
+      clearTodos: () => {
+        todoStore.clearTodos();
+      },
     };
-  }
+  },
 });
 </script>
