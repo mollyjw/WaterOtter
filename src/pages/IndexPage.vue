@@ -12,7 +12,7 @@ import {
   Todo
 } from 'components/models';
 
-import ExampleComponent from 'components/ExampleComponent.vue';
+import ExampleComponent from 'components/TodoComponent.vue';
 
 import {
   defineComponent,

@@ -1,19 +1,34 @@
 <template>
-  <div>
-    <p>{{ title }}</p>
-    <ul>
-      <li
-          v-for  = "todo in todos"
-          :key   = "todo.id"
-          @click = "increment"
-      >
-        {{ todo.id }} - {{ todo.content }}
-      </li>
-    </ul>
-    <p>Count: {{ todoCount }} </p>
-    <p>Clicks on todos: {{ clickCount }}</p>
-  </div>
+    <q-card class="my-card">
+      <q-card-section>
+        <div class="text-h6">{{ title }}</div>
+      </q-card-section>
+
+      <q-separator  inset/>
+
+      <q-card-section>
+        <div class="text-subtitle2">Count: {{ todoCount }},  Clicks: {{ clickCount }} </div>
+        <ul>
+          <li
+              v-for  = "todo in todos"
+              :key   = "todo.id"
+              @click = "increment"
+          >
+            {{ todo.id }} - {{ todo.content }}
+          </li>
+        </ul>
+
+      </q-card-section>
+    </q-card>
 </template>
+
+<style>
+.my-card {
+  margin: 0 auto;
+  min-width: 300px;
+  max-width: 600px;
+}
+</style>
 
 <script lang="ts">
 import {
@@ -51,7 +66,7 @@ function useDisplayTodo(todos: Ref<Todo[]>) {
 }
 
 export default defineComponent({
-  name: 'ExampleComponent',
+  name: 'TodoComponent',
   props: {
     title: {
       type:     String,
