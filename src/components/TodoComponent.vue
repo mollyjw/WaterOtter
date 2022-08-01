@@ -7,7 +7,7 @@
       <q-separator  inset/>
 
       <q-card-section>
-        <div class="text-subtitle2">Count: {{ todoCount }},  Clicks: {{ clickCount }} </div>
+        <div class="text-subtitle2">Count: {{ todoCount }}</div>
         <ul>
           <li
               v-for  = "todo in todos"
@@ -35,32 +35,17 @@ import {
   defineComponent,
   PropType,
   computed,
-  ref,
-  toRef,
   Ref,
 } from 'vue';
 
 import {
   Todo
-} from './models';
+} from '../models';
 
-function useClickCount() {
-  const clickCount = ref(0);
+import { useTodoStore } from 'stores/example-store';
 
-  function increment() {
-    clickCount.value += 1;
-
-    return clickCount.value;
-  }
-
-  return {
-    clickCount,
-    increment
-  };
-}
-
-function useDisplayTodo(todos: Ref<Todo[]>) {
-  const todoCount = computed(() => todos.value.length);
+function useDisplayTodo(todos: Todo[]) {
+  const todoCount = computed(() => todos.values.length);
 
   return { todoCount };
 }
@@ -79,8 +64,7 @@ export default defineComponent({
   },
   setup (props) {
     return {
-      ...useClickCount(),
-      ...useDisplayTodo(toRef(props, 'todos'))
+      ...useDisplayTodo(props.todos),
     };
   },
 });
