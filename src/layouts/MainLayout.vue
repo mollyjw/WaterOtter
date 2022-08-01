@@ -7,7 +7,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
-          Title
+          Todo
         </q-toolbar-title>
       </q-toolbar>
 
@@ -27,7 +27,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
-          <div>Title</div>
+          <div>Todo</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

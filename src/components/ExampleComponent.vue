@@ -10,8 +10,7 @@
         {{ todo.id }} - {{ todo.content }}
       </li>
     </ul>
-    <p>Count: {{ todoCount }} / {{ meta.totalCount }}</p>
-    <p>Active: {{ active ? 'yes' : 'no' }}</p>
+    <p>Count: {{ todoCount }} </p>
     <p>Clicks on todos: {{ clickCount }}</p>
   </div>
 </template>
@@ -27,8 +26,7 @@ import {
 } from 'vue';
 
 import {
-  Todo,
-  Meta
+  Todo
 } from './models';
 
 function useClickCount() {
@@ -62,13 +60,6 @@ export default defineComponent({
     todos: {
       type:    Array as PropType<Todo[]>,
       default: () => []
-    },
-    meta: {
-      type:     Object as PropType<Meta>,
-      required: true
-    },
-    active: {
-      type: Boolean
     }
   },
   setup (props) {
