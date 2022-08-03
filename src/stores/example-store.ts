@@ -15,12 +15,6 @@ export const useTodoStore = defineStore('todo', {
   }),
   getters: { },
   actions: {
-    addTenTodos() {
-
-      for (let i = 0; i < 10; i++) {
-        this.todos.push({ id: i + 3, content: 'Todo ' + (i + 3), completed: false });
-      }
-    },
     clearTodos() {
       this.todos.length = 0;
     }

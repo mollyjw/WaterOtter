@@ -15,10 +15,7 @@
     <br/>
     <div class="row">
       <div class="col-sm-4"/>
-      <div class="col-sm-2">
-        <q-btn @click="addTodos">Add Todos</q-btn>
-      </div>
-      <div class="col-sm-2">
+      <div class="col-sm-4">
         <q-btn @click="clearTodos">Clear Todos</q-btn>
       </div>
     </div>
@@ -43,9 +40,6 @@ export default defineComponent({
   setup () {
     return {
       ...todoStore,
-      addTodos: () => {
-        todoStore.addTenTodos();
-      },
       clearTodos: () => {
         todoStore.clearTodos();
       },
