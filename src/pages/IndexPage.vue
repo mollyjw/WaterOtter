@@ -1,12 +1,26 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title  = "Todo List:"
-      :todos = "todos"
-    ></example-component>
+  <q-page>
+    <br/>
 
-    <q-btn @click="addTodos">Add Todos</q-btn>
-    <q-btn @click="clearTodos">Clear Todos</q-btn>
+    <div class="row">
+      <div class="col-sm-12">
+        <example-component
+          title  = "Todo List:"
+          :todos = "todos"
+        ></example-component>
+      </div>
+    </div>
+
+    <br/>
+    <div class="row">
+      <div class="col-sm-4"/>
+      <div class="col-sm-2">
+        <q-btn @click="addTodos">Add Todos</q-btn>
+      </div>
+      <div class="col-sm-2">
+        <q-btn @click="clearTodos">Clear Todos</q-btn>
+      </div>
+    </div>
   </q-page>
 </template>
 
