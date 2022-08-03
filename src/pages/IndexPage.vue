@@ -15,7 +15,7 @@
     <br/>
     <div class="row">
       <div class="col-sm-4"/>
-      <div class="col-sm-4">
+      <div class="col-sm-4 text-center">
         <q-btn @click="clearTodos">Clear Todos</q-btn>
       </div>
     </div>

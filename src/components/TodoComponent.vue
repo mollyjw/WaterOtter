@@ -1,8 +1,8 @@
 <template>
-    <q-card class="my-card">
+    <q-card class="my-card bg-primary" dark >
       <q-card-section>
         <div class="text-h6">
-          <q-input hint="Task"/>
+          <q-input hint="Task" dark/>
         </div>
       </q-card-section>
 
@@ -18,10 +18,12 @@
           </thead>
           <tbody>
             <tr v-for="todo in todos" :key="todo.id">
-              <td>{{ todo.content }}</td>
-              <td>{{ JSON.stringify(todo.completed)}}</td>
-              <td>
-                <q-btn @click="removeTodo(todo)">Remove</q-btn>
+              <td class="text-left">{{ todo.content }}</td>
+              <td class="text-center">{{ JSON.stringify(todo.completed)}}</td>
+              <td class="text-center">
+                <q-btn round color="red" glossy>
+                  <q-icon size="large" name="delete_forever"/>
+                </q-btn>
               </td>
             </tr>
           </tbody>
