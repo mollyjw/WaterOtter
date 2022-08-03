@@ -7,16 +7,25 @@
       </q-card-section>
 
       <q-card-section>
-        <div class="text-subtitle2">Count: {{ todoCount }}</div>
-        <ul>
-          <li
-              v-for  = "todo in todos"
-              :key   = "todo.id"
-              @click = "increment"
-          >
-            {{ todo.id }} - {{ todo.content }}
-          </li>
-        </ul>
+
+        <q-markup-table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Completed</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="todo in todos" :key="todo.id">
+              <td>{{ todo.content }}</td>
+              <td>{{ JSON.stringify(todo.completed)}}</td>
+              <td>
+                <q-btn @click="removeTodo(todo)">Remove</q-btn>
+              </td>
+            </tr>
+          </tbody>
+        </q-markup-table>
 
       </q-card-section>
     </q-card>
@@ -41,12 +50,6 @@ import {
   Todo
 } from '../models';
 
-function useDisplayTodo(todos: Todo[]) {
-  const todoCount = computed(() => todos.length);
-
-  return { todoCount };
-}
-
 export default defineComponent({
   name: 'TodoComponent',
   props: {
@@ -57,7 +60,6 @@ export default defineComponent({
   },
   setup (props) {
     return {
-      ...useDisplayTodo(props.todos),
     };
   },
 });

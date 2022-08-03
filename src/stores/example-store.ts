@@ -8,9 +8,9 @@ interface TodoStore {
 export const useTodoStore = defineStore('todo', {
   state: (): TodoStore => ({
     todos: [
-      { id: 1, content: 'Learn Pinia' },
-      { id: 2, content: 'Learn Vue' },
-      { id: 3, content: 'Learn Quasar' },
+      { id: 1, content: 'Learn Pinia', completed: false },
+      { id: 2, content: 'Learn Vue',   completed: false },
+      { id: 3, content: 'Learn Quasar', completed: false },
     ],
   }),
   getters: { },
@@ -18,7 +18,7 @@ export const useTodoStore = defineStore('todo', {
     addTenTodos() {
 
       for (let i = 0; i < 10; i++) {
-        this.todos.push({ id: i + 3, content: 'Todo ' + (i + 3) });
+        this.todos.push({ id: i + 3, content: 'Todo ' + (i + 3), completed: false });
       }
     },
     clearTodos() {
