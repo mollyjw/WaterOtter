@@ -17,6 +17,15 @@ export const useTodoStore = defineStore('todo', {
   actions: {
     clearTodos() {
       this.todos.length = 0;
+    },
+    addTodo(content: string) {
+      console.log(content);
+
+      this.todos.push({
+        id: this.todos.length + 1,
+        content,
+        completed: false,
+      });
     }
   },
 

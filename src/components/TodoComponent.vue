@@ -1,9 +1,15 @@
 <template>
     <q-card class="my-card bg-primary" dark >
       <q-card-section>
-        <div class="text-h6">
-          <q-input hint="Task" dark/>
+        <div class="row">
+          <div class="col-sm-10">
+            <q-input :model-value="newTask" hint="Task" dark />
+          </div>
+          <div class="col-sm-2">
+            <q-btn glossy color="red" @click="addTask(newTask)">Add Task</q-btn>
+          </div>
         </div>
+
       </q-card-section>
 
       <q-card-section>
@@ -44,13 +50,16 @@
 <script lang="ts">
 import {
   defineComponent,
-  PropType,
-  computed,
+  PropType, ref,
 } from 'vue';
 
 import {
   Todo
 } from '../models';
+
+import { useTodoStore } from 'stores/example-store';
+
+const todoStore = useTodoStore();
 
 export default defineComponent({
   name: 'TodoComponent',
@@ -62,6 +71,11 @@ export default defineComponent({
   },
   setup (props) {
     return {
+      newTask: ref(''),
+      addTask: (newTask: string) => {
+        console.log(newTask);
+        todoStore.addTodo(newTask);
+      }
     };
   },
 });
