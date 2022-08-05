@@ -25,7 +25,16 @@
           <tbody>
             <tr v-for="todo in todos" :key="todo.id">
               <td class="text-left">{{ todo.content }}</td>
-              <td class="text-center">{{ JSON.stringify(todo.completed)}}</td>
+              <td class="text-center">
+
+                <div v-if="todo.completed">
+                  <q-icon size="large" name="check" color="green" />
+                </div>
+                <div v-else>
+                  <q-icon  size="large" name="close" color="red" />
+                </div>
+
+              </td>
               <td class="text-center">
                 <q-btn round color="red" glossy>
                   <q-icon size="large" name="delete_forever"/>
