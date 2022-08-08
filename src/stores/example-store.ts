@@ -1,5 +1,6 @@
 import { defineStore }  from 'pinia';
 import { Todo } from 'src/models';
+import { Ref } from "vue";
 
 interface TodoStore {
   todos: Todo[];
@@ -19,7 +20,6 @@ export const useTodoStore = defineStore('todo', {
       this.todos.length = 0;
     },
     addTodo(content: string) {
-      console.log(content);
 
       this.todos.push({
         id: this.todos.length + 1,

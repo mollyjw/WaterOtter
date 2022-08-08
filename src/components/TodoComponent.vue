@@ -3,10 +3,10 @@
       <q-card-section>
         <div class="row">
           <div class="col-sm-10">
-            <q-input :model-value="newTask" hint="Task" dark />
+            <q-input v-model="newTask" hint="Task" dark />
           </div>
           <div class="col-sm-2">
-            <q-btn glossy color="red" @click="addTask(newTask)">Add Task</q-btn>
+            <q-btn glossy color="red" @click="addTask()">Add Task</q-btn>
           </div>
         </div>
 
@@ -78,12 +78,13 @@ export default defineComponent({
       default: () => []
     }
   },
-  setup (props) {
+  setup () {
+    const newTask = ref('');
+
     return {
-      newTask: ref(''),
-      addTask: (newTask: string) => {
-        console.log(newTask);
-        todoStore.addTodo(newTask);
+      newTask,
+      addTask: () => {
+        todoStore.addTodo(newTask.value);
       }
     };
   },
