@@ -6,7 +6,7 @@
       <div class="col-sm-12">
         <example-component
           :todos = "getTodos()"
-          :done = "getDoneTodos()"
+          :done  = "getDoneTodos()"
         ></example-component>
       </div>
     </div>

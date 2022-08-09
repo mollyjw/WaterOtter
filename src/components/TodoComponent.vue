@@ -4,8 +4,8 @@
         <div class="row">
           <div class="col-sm-12">
             <q-input
-              v-model="newTask"
-              hint="Add item"
+              v-model = "newTask"
+              hint    = "Add item"
               dark
               @keyup.enter="addTask()"
             />
@@ -20,37 +20,46 @@
 
         <q-markup-table class="q-mt-sm">
           <tbody>
-            <tr v-for="todo in todos" :key="todo.id">
+            <tr
+              v-for = "todo in todos"
+              :key  = "todo.id"
+            >
               <td>
                 <q-checkbox :model-value="todo.completed"></q-checkbox>
 
-              <span class="q-pl-md">{{ todo.content }}</span></td>
+                <span class="q-pl-md">
+                  {{ todo.content }}
+                </span>
+              </td>
             </tr>
           </tbody>
         </q-markup-table>
-
       </q-card-section>
     </q-card>
   <br/>
-  <q-card class="my-card bg-blue-10"  dark>
+  <q-card
+    class="my-card bg-blue-10"
+    dark
+  >
     <q-card-section>
       <b>DONE</b>
 
       <div class="row">
         <div class="col-sm-6">
           <q-btn
-            color="primary"
-            class="q-ma-md full-width"
-            @click="uncheckTodos">
+            color  = "primary"
+            class  = "q-ma-md full-width"
+            @click = "uncheckTodos"
+          >
             UNCHECK ALL
 
           </q-btn>
         </div>
         <div class="col-sm-6">
           <q-btn
-            class="q-ma-md full-width"
-            color="red"
-            size="md"
+            class = "q-ma-md full-width"
+            color = "red"
+            size  = "md"
           >
 
             DELETE ALL
@@ -59,11 +68,17 @@
       </div>
       <q-markup-table class="q-mt-sm">
         <tbody>
-        <tr v-for="todo in done" :key="todo.id">
+        <tr
+          v-for = "todo in done"
+          :key  = "todo.id"
+        >
           <td>
             <q-checkbox :model-value="todo.completed"></q-checkbox>
 
-            <span class="q-pl-md">{{ todo.content }}</span></td>
+            <span class="q-pl-md">
+              {{ todo.content }}
+            </span>
+          </td>
         </tr>
         </tbody>
       </q-markup-table>
@@ -73,7 +88,7 @@
 
 <style>
 .my-card {
-  margin: 0 auto;
+  margin:    0 auto;
   min-width: 300px;
   max-width: 600px;
 }
@@ -103,7 +118,6 @@ export default defineComponent({
     done: {
       type:    Array as PropType<Todo[]>,
       default: () => []
-
     }
   },
   setup () {
