@@ -19,17 +19,15 @@
         <q-markup-table class="q-mt-sm">
           <tbody>
             <tr v-for="todo in todos" :key="todo.id">
-              <td class="text-center">
-
-                <div v-if="todo.completed">
+              <td>
+                <span v-if="todo.completed">
                   <q-icon size="large" name="check" color="green" />
-                </div>
-                <div v-else>
+                </span>
+                <span v-else>
                   <q-icon  size="large" name="close" color="red" />
-                </div>
+                </span>
 
-              </td>
-              <td class="text-left">{{ todo.content }}</td>
+              <span class="q-pl-md">{{ todo.content }}</span></td>
             </tr>
           </tbody>
         </q-markup-table>
