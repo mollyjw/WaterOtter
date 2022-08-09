@@ -14,7 +14,9 @@
 
       <q-card-section>
 
-        <q-markup-table>
+        <b>TO DO</b>
+
+        <q-markup-table class="q-mt-sm">
           <tbody>
             <tr v-for="todo in todos" :key="todo.id">
               <td class="text-center">
