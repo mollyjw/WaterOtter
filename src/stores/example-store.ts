@@ -14,7 +14,10 @@ export const useTodoStore = defineStore('todo', {
       { id: 3, content: 'Learn Quasar', completed: false },
     ],
   }),
-  getters: { },
+  getters: {
+    getTodos: (state) => state.todos.filter(todo => !todo.completed),
+    getDoneTodos: (state) => state.todos.filter(todo => todo.completed),
+  },
   actions: {
     clearTodos() {
       this.todos.length = 0;

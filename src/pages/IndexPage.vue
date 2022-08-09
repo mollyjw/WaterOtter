@@ -5,7 +5,8 @@
     <div class="row">
       <div class="col-sm-12">
         <example-component
-          :todos = "todos"
+          :todos = "getTodos()"
+          :done = "getDoneTodos()"
         ></example-component>
       </div>
     </div>
@@ -38,6 +39,12 @@ export default defineComponent({
   setup () {
     return {
       ...todoStore,
+      getTodos () {
+        return todoStore.getTodos;
+      },
+      getDoneTodos () {
+        return todoStore.getDoneTodos;
+      },
       clearTodos: () => {
         todoStore.clearTodos();
       },

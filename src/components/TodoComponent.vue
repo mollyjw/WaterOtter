@@ -58,7 +58,7 @@
       </div>
       <q-markup-table class="q-mt-sm">
         <tbody>
-        <tr v-for="todo in todos" :key="todo.id">
+        <tr v-for="todo in done" :key="todo.id">
           <td>
             <q-checkbox :model-value="todo.completed"></q-checkbox>
 
@@ -98,6 +98,11 @@ export default defineComponent({
     todos: {
       type:    Array as PropType<Todo[]>,
       default: () => []
+    },
+    done: {
+      type:    Array as PropType<Todo[]>,
+      default: () => []
+
     }
   },
   setup () {
