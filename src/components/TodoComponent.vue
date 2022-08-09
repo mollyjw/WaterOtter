@@ -3,7 +3,12 @@
       <q-card-section>
         <div class="row">
           <div class="col-sm-12">
-            <q-input v-model="newTask" hint="Add item" dark />
+            <q-input
+              v-model="newTask"
+              hint="Add item"
+              dark
+              @keyup.enter="addTask()"
+            />
           </div>
         </div>
 
