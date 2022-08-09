@@ -17,14 +17,13 @@
         <q-markup-table>
           <thead>
             <tr>
-              <th>Task</th>
               <th>Completed</th>
+              <th>Task</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="todo in todos" :key="todo.id">
-              <td class="text-left">{{ todo.content }}</td>
               <td class="text-center">
 
                 <div v-if="todo.completed">
@@ -35,6 +34,8 @@
                 </div>
 
               </td>
+              <td class="text-left">{{ todo.content }}</td>
+
               <td class="text-center">
                 <q-btn round color="red" glossy>
                   <q-icon size="large" name="delete_forever"/>
