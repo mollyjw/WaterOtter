@@ -22,6 +22,14 @@ export const useTodoStore = defineStore('todo', {
     clearTodos() {
       this.todos.length = 0;
     },
+    uncheckTodos() {
+
+      console.log("Store uncheck todos has been called");
+
+      for (let i = 0; i < this.todos.length; i++) {
+        this.todos[i].completed = false;
+      }
+    },
     addTodo(content: string) {
 
       this.todos.push({

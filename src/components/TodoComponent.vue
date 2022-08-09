@@ -40,8 +40,10 @@
         <div class="col-sm-6">
           <q-btn
             color="primary"
-            class="q-ma-md full-width">
+            class="q-ma-md full-width"
+            @click="uncheckTodos">
             UNCHECK ALL
+
           </q-btn>
         </div>
         <div class="col-sm-6">
@@ -49,7 +51,6 @@
             class="q-ma-md full-width"
             color="red"
             size="md"
-            @click="clearTodos"
           >
 
             DELETE ALL
@@ -116,9 +117,9 @@ export default defineComponent({
           newTask.value = '';
         }
       },
-      clearTodos: () => {
-        todoStore.clearTodos();
-      },
+      uncheckTodos: () => {
+        todoStore.uncheckTodos();
+      }
     };
   },
 });
