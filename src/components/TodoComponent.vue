@@ -69,7 +69,10 @@ export default defineComponent({
     return {
       newTask,
       addTask: () => {
-        todoStore.addTodo(newTask.value);
+        if (newTask.value.length > 0) {
+          todoStore.addTodo(newTask.value);
+          newTask.value = '';
+        }
       }
     };
   },
