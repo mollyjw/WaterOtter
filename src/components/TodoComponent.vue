@@ -19,7 +19,6 @@
             <tr>
               <th>Completed</th>
               <th>Task</th>
-              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -35,12 +34,6 @@
 
               </td>
               <td class="text-left">{{ todo.content }}</td>
-
-              <td class="text-center">
-                <q-btn round color="red" glossy>
-                  <q-icon size="large" name="delete_forever"/>
-                </q-btn>
-              </td>
             </tr>
           </tbody>
         </q-markup-table>
