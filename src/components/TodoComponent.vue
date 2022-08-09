@@ -31,6 +31,43 @@
 
       </q-card-section>
     </q-card>
+  <br/>
+  <q-card class="my-card bg-blue-10"  dark>
+    <q-card-section>
+      <b>DONE</b>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <q-btn
+            color="primary"
+            class="q-ma-md full-width">
+            UNCHECK ALL
+          </q-btn>
+        </div>
+        <div class="col-sm-6">
+          <q-btn
+            class="q-ma-md full-width"
+            color="red"
+            size="md"
+            @click="clearTodos"
+          >
+
+            DELETE ALL
+          </q-btn>
+        </div>
+      </div>
+      <q-markup-table class="q-mt-sm">
+        <tbody>
+        <tr v-for="todo in todos" :key="todo.id">
+          <td>
+            <q-checkbox :model-value="todo.completed"></q-checkbox>
+
+            <span class="q-pl-md">{{ todo.content }}</span></td>
+        </tr>
+        </tbody>
+      </q-markup-table>
+    </q-card-section>
+  </q-card>
 </template>
 
 <style>
@@ -73,7 +110,10 @@ export default defineComponent({
           todoStore.addTodo(newTask.value);
           newTask.value = '';
         }
-      }
+      },
+      clearTodos: () => {
+        todoStore.clearTodos();
+      },
     };
   },
 });
