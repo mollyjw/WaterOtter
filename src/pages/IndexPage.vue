@@ -10,14 +10,6 @@
         ></example-component>
       </div>
     </div>
-
-    <br/>
-    <div class="row">
-      <div class="col-sm-4"/>
-      <div class="col-sm-4 text-center">
-        <q-btn glossy color="red" @click="clearTodos">Clear Todos</q-btn>
-      </div>
-    </div>
   </q-page>
 </template>
 
@@ -44,9 +36,6 @@ export default defineComponent({
       },
       getDoneTodos () {
         return todoStore.getDoneTodos;
-      },
-      clearTodos: () => {
-        todoStore.clearTodos();
       },
     };
   },

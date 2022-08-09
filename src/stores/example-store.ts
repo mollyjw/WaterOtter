@@ -19,9 +19,6 @@ export const useTodoStore = defineStore('todo', {
     getDoneTodos: (state) => state.todos.filter(todo => todo.completed),
   },
   actions: {
-    clearTodos() {
-      this.todos.length = 0;
-    },
     uncheckTodos() {
 
       console.log("Store uncheck todos has been called");
