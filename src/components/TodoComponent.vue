@@ -2,11 +2,8 @@
     <q-card class="my-card bg-primary" dark >
       <q-card-section>
         <div class="row">
-          <div class="col-sm-10">
+          <div class="col-sm-12">
             <q-input v-model="newTask" hint="Add item" dark />
-          </div>
-          <div class="col-sm-2">
-            <q-btn glossy color="red" @click="addTask()">Add Task</q-btn>
           </div>
         </div>
 
