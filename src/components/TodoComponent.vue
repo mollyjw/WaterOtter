@@ -15,12 +15,6 @@
       <q-card-section>
 
         <q-markup-table>
-          <thead>
-            <tr>
-              <th>Completed</th>
-              <th>Task</th>
-            </tr>
-          </thead>
           <tbody>
             <tr v-for="todo in todos" :key="todo.id">
               <td class="text-center">
