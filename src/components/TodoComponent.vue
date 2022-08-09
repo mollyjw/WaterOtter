@@ -20,12 +20,7 @@
           <tbody>
             <tr v-for="todo in todos" :key="todo.id">
               <td>
-                <span v-if="todo.completed">
-                  <q-icon size="large" name="check" color="green" />
-                </span>
-                <span v-else>
-                  <q-icon  size="large" name="close" color="red" />
-                </span>
+                <q-checkbox :model-value="todo.completed"></q-checkbox>
 
               <span class="q-pl-md">{{ todo.content }}</span></td>
             </tr>
