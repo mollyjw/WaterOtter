@@ -32,10 +32,10 @@ export default defineComponent({
     return {
       ...todoStore,
       getTodos () {
-        return todoStore.getTodos;
+        return todoStore.todos;
       },
       getDoneTodos () {
-        return todoStore.getDoneTodos;
+        return todoStore.done;
       },
     };
   },
