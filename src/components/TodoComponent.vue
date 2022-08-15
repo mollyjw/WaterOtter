@@ -57,9 +57,10 @@
         </div>
         <div class="col-sm-6">
           <q-btn
-            class = "q-ma-md full-width"
-            color = "red"
-            size  = "md"
+            class  = "q-ma-md full-width"
+            color  = "red"
+            size   = "md"
+            @click = "removeCompleted"
           >
 
             DELETE ALL
@@ -133,6 +134,9 @@ export default defineComponent({
       },
       uncheckTodos: () => {
         todoStore.uncheckTodos();
+      },
+      removeCompleted: () => {
+        todoStore.removeCompleted();
       },
       toggleTodo: (idx: number) => {
         todoStore.toggleTodo(idx);
