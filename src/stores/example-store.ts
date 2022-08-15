@@ -20,19 +20,30 @@ export const useTodoStore = defineStore('todo', () => {
       completed: false
     },
   ]);
+
   const todos = computed(() => allTodos.value.filter(todo => !todo.completed));
-  const done = computed(() => allTodos.value.filter(todo => todo.completed));
+  const done  = computed(() => allTodos.value.filter(todo => todo.completed));
 
   function uncheckTodos() {
-    allTodos.value.forEach(function(todo) { todo.completed = false; });
+    // Uncheck all todos without modifying the original array values
+    allTodos.value = allTodos.value.map(todo => {
+      return {
+        ...todo,
+        completed: false
+      };
+    });
   }
 
   function addTodo(content:string) {
-    allTodos.value.push({
-      id: allTodos.value.length + 1,
-      content,
-      completed: false,
-    });
+    // Add a new todo without modifying the original array
+    allTodos.value = [
+      ...allTodos.value,
+      {
+        id: allTodos.value.length + 1,
+        content,
+        completed: false
+      }
+    ];
   }
 
   function removeCompleted() {
@@ -40,13 +51,17 @@ export const useTodoStore = defineStore('todo', () => {
   }
 
   function toggleTodo(id:number) {
-    allTodos.value.forEach(
-      function(todo) {
-        if (todo.id === id) {
-          todo.completed = !todo.completed;
-        }
+    // Update the todos ref without mutating the original array
+    allTodos.value = allTodos.value.map(todo => {
+      if (todo.id !== id) {
+        return { ...todo };
       }
-    );
+
+      return {
+        ...todo,
+        completed: !todo.completed,
+      };
+    });
   }
 
   return {
