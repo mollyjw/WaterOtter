@@ -1,6 +1,10 @@
 import { defineStore }  from 'pinia';
-import { Todo } from 'src/models';
-import { computed, ref } from 'vue';
+import { Todo        } from 'src/models';
+
+import {
+  computed,
+  ref
+} from 'vue';
 
 export const useTodoStore = defineStore('todo', () => {
   const allTodos = ref<Todo[]>([
@@ -28,8 +32,8 @@ export const useTodoStore = defineStore('todo', () => {
     // Uncheck all todos without modifying the original array values
     allTodos.value = allTodos.value.map(todo => {
       return {
-        ...todo,
-        completed: false
+        ...todo,         // copies all properties from the original todo
+        completed: false // overrides the completed property
       };
     });
   }
@@ -37,7 +41,8 @@ export const useTodoStore = defineStore('todo', () => {
   function addTodo(content:string) {
     // Add a new todo without modifying the original array
     allTodos.value = [
-      ...allTodos.value,
+      ...allTodos.value, // copies all existing todos
+      // creates a new todo with the given content
       {
         id: allTodos.value.length + 1,
         content,
@@ -47,6 +52,7 @@ export const useTodoStore = defineStore('todo', () => {
   }
 
   function removeCompleted() {
+    // Removes all completed todos without modifying the original array
     allTodos.value = allTodos.value.filter(todo => !todo.completed);
   }
 
@@ -54,12 +60,12 @@ export const useTodoStore = defineStore('todo', () => {
     // Update the todos ref without mutating the original array
     allTodos.value = allTodos.value.map(todo => {
       if (todo.id !== id) {
-        return { ...todo };
+        return { ...todo }; // returns copies of all other todos
       }
 
       return {
-        ...todo,
-        completed: !todo.completed,
+        ...todo,                    // copies all properties from the original todo
+        completed: !todo.completed, // toggles the completed property
       };
     });
   }
