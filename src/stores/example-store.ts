@@ -1,6 +1,6 @@
 import { defineStore }  from 'pinia';
 import { Todo } from 'src/models';
-import { computed, ref, Ref } from "vue";
+import { computed, ref } from "vue";
 
 interface TodoStore {
   todos: Todo[];
@@ -39,11 +39,22 @@ export const useTodoStore = defineStore('todo', () => {
     });
   }
 
+  function toggleTodo(id:number) {
+    allTodos.value.forEach(
+      function(todo) {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+      }
+    );
+  }
+
   return {
     allTodos,
     todos,
     done,
     uncheckTodos,
+    toggleTodo,
     addTodo,
   };
 });

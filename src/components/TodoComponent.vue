@@ -25,7 +25,7 @@
               :key  = "todo.id"
             >
               <td>
-                <q-checkbox :model-value="todo.completed"></q-checkbox>
+                <q-checkbox :model-value="todo.completed" @click="toggleTodo(todo.id)"></q-checkbox>
 
                 <span class="q-pl-md">
                   {{ todo.content }}
@@ -73,7 +73,7 @@
           :key  = "todo.id"
         >
           <td>
-            <q-checkbox :model-value="todo.completed"></q-checkbox>
+            <q-checkbox :model-value="todo.completed" @click="toggleTodo(todo.id)"></q-checkbox>
 
             <span class="q-pl-md">
               {{ todo.content }}
@@ -133,6 +133,9 @@ export default defineComponent({
       },
       uncheckTodos: () => {
         todoStore.uncheckTodos();
+      },
+      toggleTodo: (idx: number) => {
+        todoStore.toggleTodo(idx);
       }
     };
   },
