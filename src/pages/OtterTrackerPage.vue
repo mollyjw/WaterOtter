@@ -2,14 +2,16 @@
   <q-page padding>
     <q-circular-progress
       show-value
-      font-size="12px"
+      font-size="30px"
       :value="percentDrunk"
-      size="50px"
+      size="120px"
       :thickness="0.22"
-      color="teal"
+      color="primary"
+      center-color="light-blue"
       track-color="grey-3"
       class="q-ma-md"
     >
+      <q-icon name="volume_up" class="q-mr-xs" />
       {{ percentDrunk }}%
     </q-circular-progress>
     <h1>{{percentDrunk}} %</h1>

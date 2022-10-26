@@ -11,8 +11,7 @@ export const useTrackerStore = defineStore('counter', {
       return state.ozGoal - state.ozDrunk;
     },
     percentDrunk (state) {
-      const decimal = Math.round(state.ozDrunk / state.ozGoal);
-      return decimal * 100;
+      return Math.round(state.ozDrunk / state.ozGoal * 100);
     }
   },
 
