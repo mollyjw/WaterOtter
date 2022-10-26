@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <br/>
-
+    <h1>{{this.hello}}</h1>
     <div class="row">
       <div class="col-sm-12">
         <example-component
@@ -29,7 +29,9 @@ export default defineComponent({
   name: 'IndexPage',
   components: { ExampleComponent },
   setup () {
+    const hello = 'yello!';
     return {
+      hello,
       ...todoStore,
       getTodos () {
         return todoStore.todos;

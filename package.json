@@ -1,8 +1,8 @@
 {
-  "name": "template-web",
+  "name": "water-otter",
   "version": "0.0.1",
   "description": "A web project template",
-  "productName": "Template Web",
+  "productName": "Water Otter",
   "author": "Andrew Smith <andrew.smith@wwinc.com>",
   "private": true,
   "scripts": {
