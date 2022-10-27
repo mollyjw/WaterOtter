@@ -8,16 +8,16 @@
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+            <img src="/icons/otter-face.png">
           </q-avatar>
-          Todo
+          WaterOtter
         </q-toolbar-title>
       </q-toolbar>
 
       <q-tabs align="left">
         <q-route-tab
           to    = "/"
-          label = "App"
+          label = "Tracker"
         />
         <q-route-tab
           to    = "/about"
@@ -39,7 +39,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
-          <div>Todo</div>
+          <div>WaterOtter</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

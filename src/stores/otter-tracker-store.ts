@@ -3,7 +3,8 @@ import { defineStore } from 'pinia';
 export const useTrackerStore = defineStore('counter', {
   state: () => ({
     ozDrunk: 0,
-    ozGoal: 64
+    ozGoal: 64,
+    passedInOz: 0
   }),
 
   getters: {
@@ -20,10 +21,10 @@ export const useTrackerStore = defineStore('counter', {
       this.ozDrunk++;
     },
     addOunces (oz: number) {
-      this.ozDrunk += oz;
+      this.ozDrunk = this.ozDrunk + oz;
     },
     deleteOunces (oz: number) {
-      this.ozDrunk -= oz;
+      this.ozDrunk = this.ozDrunk - oz;
     }
   }
 });
