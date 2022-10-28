@@ -4,7 +4,8 @@ export const useTrackerStore = defineStore('counter', {
   state: () => ({
     ozDrunk: 0,
     ozGoal: 64,
-    passedInOz: 0
+    passedInOz: null,
+    today: Date.now()
   }),
 
   getters: {
@@ -13,6 +14,11 @@ export const useTrackerStore = defineStore('counter', {
     },
     percentDrunk (state) {
       return Math.round(state.ozDrunk / state.ozGoal * 100);
+    },
+    date (state) {
+      const today = new Date(state.today);
+      const month = today.getMonth() + 1;
+      return today.getFullYear() + '/' + month + '/' + today.getDate();
     }
   },
 
@@ -22,6 +28,7 @@ export const useTrackerStore = defineStore('counter', {
     },
     addOunces (oz: number) {
       this.ozDrunk = this.ozDrunk + oz;
+      this.passedInOz = null;
     },
     deleteOunces (oz: number) {
       this.ozDrunk = this.ozDrunk - oz;

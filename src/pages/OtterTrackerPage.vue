@@ -28,7 +28,7 @@
         </div>
         <div class="row justify-center" style="margin-bottom: 2%">
           <div class="col-3">
-            <q-input rounded outlined type="number" v-model="passedInOz" label="oz" />
+            <q-input rounded outlined type="number" v-model.number="passedInOz" label="oz" />
           </div>
         </div>
         <div class="row justify-center">
@@ -36,10 +36,15 @@
             <q-btn color="purple" label="Add Oz" @click="addOunces(passedInOz)"/>
           </div>
           <div class="col-3">
-            <q-btn label="Delete Oz"/>
+            <q-btn label="Delete Oz" @click="deleteOunces(passedInOz)"/>
           </div>
         </div>
-
+      </div>
+      <div class="col-5 text-center">
+        <q-date
+          v-model="date"
+          color="light-blue"
+        />
       </div>
     </div>
   </q-page>
@@ -55,7 +60,7 @@ export default defineComponent({
   name: 'OtterTrackerPage',
   setup () {
     const trackerStore = useTrackerStore();
-    const { ozDrunk, ozToDrink, ozGoal, percentDrunk, passedInOz } = storeToRefs(trackerStore);
+    const { ozDrunk, ozToDrink, ozGoal, percentDrunk, passedInOz, date } = storeToRefs(trackerStore);
     const { increment, addOunces, deleteOunces } = trackerStore;
     return {
       ozDrunk,
@@ -63,6 +68,7 @@ export default defineComponent({
       ozGoal,
       percentDrunk,
       passedInOz,
+      date,
       increment,
       addOunces,
       deleteOunces
