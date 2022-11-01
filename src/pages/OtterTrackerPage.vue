@@ -19,7 +19,7 @@
         <div class="row justify-center">
           <div class="col-3">
             Water Drank:
-            <p>{{ozDrunk}} oz</p>
+            <p>{{selectedDateOzDrunk}} oz</p>
           </div>
           <div class="col-3">
             Water Left:
@@ -42,8 +42,9 @@
       </div>
       <div class="col-5 text-center">
         <q-date
-          v-model="date"
+          v-model="selectedDate"
           color="light-blue"
+          :events="datesGoalMet"
         />
       </div>
     </div>
@@ -60,19 +61,35 @@ export default defineComponent({
   name: 'OtterTrackerPage',
   setup () {
     const trackerStore = useTrackerStore();
-    const { ozDrunk, ozToDrink, ozGoal, percentDrunk, passedInOz, date } = storeToRefs(trackerStore);
-    const { increment, addOunces, deleteOunces } = trackerStore;
+    const
+      {
+        ozDrunk, ozGoal, passedInOz, selectedDate, selectedDateOzDrunk, trackedDays,
+        ozToDrink, percentDrunk, todayString, daysGoalMet, datesGoalMet
+      } = storeToRefs(trackerStore);
+    const { addOunces, deleteOunces } = trackerStore;
     return {
       ozDrunk,
-      ozToDrink,
       ozGoal,
-      percentDrunk,
       passedInOz,
-      date,
-      increment,
+      selectedDate,
+      selectedDateOzDrunk,
+      trackedDays,
+      ozToDrink,
+      percentDrunk,
+      todayString,
+      daysGoalMet,
+      datesGoalMet,
       addOunces,
-      deleteOunces
+      deleteOunces,
     };
+  },
+  mounted() {
+    this.selectedDate = this.todayString;
+    if (this.trackedDays.find(x => x.date === this.selectedDate)) {
+      this.selectedDateOzDrunk = this.trackedDays.find(x => x.date === this.selectedDate)!.ozDrank;
+    } else {
+      this.selectedDateOzDrunk = 0;
+    }
   }
 });
 </script>
