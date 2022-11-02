@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import { TrackedDay } from "src/models/trackedDay";
 
 export const useTrackerStore = defineStore('tracker', {
   state: () => ({
