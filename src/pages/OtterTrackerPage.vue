@@ -63,8 +63,8 @@ export default defineComponent({
     const trackerStore = useTrackerStore();
     const
       {
-        ozDrunk, ozGoal, passedInOz, selectedDate, selectedDateOzDrunk, trackedDays,
-        ozToDrink, percentDrunk, todayString, daysGoalMet, datesGoalMet
+        ozDrunk, ozGoal, passedInOz, selectedDate, trackedDays,
+        todayString, selectedDateOzDrunk, ozToDrink, percentDrunk, daysGoalMet, datesGoalMet
       } = storeToRefs(trackerStore);
     const { addOunces, deleteOunces } = trackerStore;
     return {
@@ -72,24 +72,20 @@ export default defineComponent({
       ozGoal,
       passedInOz,
       selectedDate,
-      selectedDateOzDrunk,
       trackedDays,
       ozToDrink,
       percentDrunk,
       todayString,
+      selectedDateOzDrunk,
       daysGoalMet,
       datesGoalMet,
       addOunces,
       deleteOunces,
+      trackerStore
     };
   },
   mounted() {
     this.selectedDate = this.todayString;
-    if (this.trackedDays.find(x => x.date === this.selectedDate)) {
-      this.selectedDateOzDrunk = this.trackedDays.find(x => x.date === this.selectedDate)!.ozDrank;
-    } else {
-      this.selectedDateOzDrunk = 0;
-    }
   }
 });
 </script>
